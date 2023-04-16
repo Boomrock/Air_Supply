@@ -31,7 +31,7 @@ public class OxygenRegulation : MonoBehaviour
 
     IEnumerator CoroutineInZone()
     {
-        for (; CurOxygen < MaxOxigen; CurOxygen++) 
+        for (; CurOxygen < MaxOxigen && PlayerInZone; CurOxygen++) 
         {
             yield return new WaitForSeconds(0.3f);
         }
@@ -40,7 +40,7 @@ public class OxygenRegulation : MonoBehaviour
 
     IEnumerator CoroutineOutZone()
     {
-        for (; CurOxygen > 0; CurOxygen--)
+        for (; CurOxygen > 0 && !PlayerInZone; CurOxygen--)
         {
             yield return new WaitForSeconds(1f);
 
