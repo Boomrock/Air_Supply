@@ -38,7 +38,6 @@ public class GenerateResource : MonoBehaviour
 
     private void SpawnResource(int y, int x, float value)
     {
-        Debug.Log(value);
         if (value > 0.9f)
         {
             tilemap.SetTile(new Vector3Int(x, y, 0), Tiles[0]);
