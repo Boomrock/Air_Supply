@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class OxygenRegulation : MonoBehaviour
 {
 
-    public int MaxOxigen = 10;
+    public int MaxOxygen = 10;
     public int CurOxygen = 10;
     public bool PlayerInZone = true;
 
@@ -33,7 +33,7 @@ public class OxygenRegulation : MonoBehaviour
 
     IEnumerator CoroutineInZone()
     {
-        for (; CurOxygen < MaxOxigen && PlayerInZone; CurOxygen++) 
+        for (; CurOxygen < MaxOxygen && PlayerInZone; CurOxygen++) 
         {
             yield return new WaitForSeconds(0.3f);
         }
@@ -46,10 +46,6 @@ public class OxygenRegulation : MonoBehaviour
         {
             yield return new WaitForSeconds(1f);
 
-        }
-        if (CurOxygen <= 0)
-        {
-            transform.gameObject.SetActive(false);
         }
     }
 }
