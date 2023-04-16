@@ -263,9 +263,10 @@ GameObject:
   - component: {fileID: 202145297}
   - component: {fileID: 202145296}
   - component: {fileID: 202145295}
+  - component: {fileID: 202145298}
   m_Layer: 0
   m_Name: Resourses
-  m_TagString: Untagged
+  m_TagString: Resource
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -390,6 +391,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &202145298
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 202145293}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1400,6 +1417,7 @@ GameObject:
   - component: {fileID: 682744650}
   - component: {fileID: 682744651}
   - component: {fileID: 682744652}
+  - component: {fileID: 682744654}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1579,6 +1597,19 @@ MonoBehaviour:
   MaxOxigen: 10
   CurOxygen: 10
   PlayerInZone: 1
+--- !u!114 &682744654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 682744645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 946e1e5647d094f429a77affa93c3b2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Resource: {fileID: 202145293}
 --- !u!1 &994094684
 GameObject:
   m_ObjectHideFlags: 0
