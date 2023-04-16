@@ -6,6 +6,7 @@ public class DoorOpeningScript : MonoBehaviour
 {
     public BoxCollider2D boxCollider;
     public Animator DoorAnimator;
+    public AudioSource audio;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,12 +22,14 @@ public class DoorOpeningScript : MonoBehaviour
     {
         if (other.transform.tag == "Player"){  
             DoorAnimator.SetBool("isDoorOpen", false);
+            audio.Play();
         }
     }
    
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.transform.tag == "Player"){
+            audio.Play();
             DoorAnimator.SetBool("isDoorOpen", true);
         }
     }

@@ -7,6 +7,7 @@ public class MoveController : MonoBehaviour
     private float horisontalInput, verticalInput;
     private Rigidbody2D rigidbody;
     public float speed;
+    public AudioSource AudioStep;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,5 +34,11 @@ public class MoveController : MonoBehaviour
             transform.rotation = rot;
         }
 
+    }
+    public void StepAudio()
+    {
+
+
+        AudioStep.Play();
     }
 }

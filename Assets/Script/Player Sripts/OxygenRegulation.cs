@@ -5,15 +5,12 @@ using UnityEngine.UI;
 
 public class OxygenRegulation : MonoBehaviour
 {
-    public Slider slider;
+
     public int MaxOxigen = 10;
     public int CurOxygen = 10;
     public bool PlayerInZone = true;
 
-    void Update()
-    {
-        slider.value = (float)CurOxygen / MaxOxigen;
-    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //Debug.Log(collision.name);

@@ -68,7 +68,7 @@ enum Resorсes
     Stone, 
     Glass,
     Organic,
-    Oxigen,
+    Oxygen,
     Metal
 
 }

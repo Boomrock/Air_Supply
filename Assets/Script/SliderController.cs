@@ -12,6 +12,6 @@ public class SliderController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        slider.value = (float)oxygenRegulation.MaxOxigen / oxygenRegulation.CurOxygen;
+        slider.value = (float)oxygenRegulation.CurOxygen / oxygenRegulation.MaxOxigen;
     }
 }
