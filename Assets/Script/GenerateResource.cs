@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.UIElements;
@@ -8,7 +9,8 @@ public class GenerateResource : MonoBehaviour
 {
     // Start is called before the first frame update
     public int[,] Map;
-
+    public Vector3 sizeMoonBase;
+    public Transform CenterMoonBase;
     public Tile[] Tiles;
     public Tilemap tilemap;
     public int SizeX = 10, SizeY = 10;
@@ -24,12 +26,21 @@ public class GenerateResource : MonoBehaviour
         transform.position = new Vector3( - SizeX/2 ,  - SizeY / 2,0);
         tilemap.ClearAllTiles();
         tilemap.size = new Vector3Int(SizeX, SizeY, 0);
+        Vector3 top = CenterMoonBase.position + sizeMoonBase/2;
+        Vector3 down = CenterMoonBase.position - sizeMoonBase/2;
         for (int y = 0; y < SizeY; y++)
         {
             for (int x = 0; x < SizeX; x++)
             {
-                var value = Random.Range(0f, 1f);
-                SpawnResource(y, x, value);
+                Vector3 cellToWorld = tilemap.CellToWorld(new Vector3Int(x, y, 0));
+                if (!((top.x > cellToWorld.x && down.x < cellToWorld.x)&&
+                    (top.y > cellToWorld.y && down.y < cellToWorld.y)))
+                {
+
+                    float value = Random.Range(0f, 1f);
+                    SpawnResource(y, x, value);
+                }
+
             }
         }
 
@@ -43,13 +54,14 @@ public class GenerateResource : MonoBehaviour
 
         if (value > 0.9f)
         {
-            var element = Random.Range(0, 4);
+            var element = Random.Range(0, 5);
             tilemap.SetTile(new Vector3Int(x, y, 0), Tiles[element]);
             
             Map[x, y] = element;
 
         }
     }
+
 }
 enum Resorсes
 {

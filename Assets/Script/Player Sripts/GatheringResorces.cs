@@ -6,7 +6,8 @@ using static UnityEditor.PlayerSettings;
 
 public class GatheringResorces : MonoBehaviour
 {
-    public GameObject Resource;
+    public GameObject _Resource;
+    public Inventory _Inventory;
     private GameObject player;
     private Tilemap tilemap;
     private int[,] map;
@@ -14,40 +15,26 @@ public class GatheringResorces : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        tilemap = Resource.GetComponent<Tilemap>();
+        tilemap = _Resource.GetComponent<Tilemap>();
         player = transform.gameObject;
         rigidbody = player.GetComponent<Rigidbody2D>();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.Log("Collision Enter");
-        if (collision.transform.tag == "Resource")
-        {
-            Debug.Log("Enter in if ");
-            Vector3Int pos = tilemap.WorldToCell(collision.transform.position);
-            tilemap.SetTile(pos, new Tile());
-        }
-    }
+
     private void OnTriggerStay2D( Collider2D collider)
     {
-        map = Resource.GetComponent<GenerateResource>().Map;
+        map = _Resource.GetComponent<GenerateResource>().Map;
 
-        Debug.Log(collider.transform.tag == "Resource");
         if (collider.transform.tag == "Resource")
         {
-
-
             GrabTileOnDirection(rigidbody.velocity.normalized);
-
         }
 
     }
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        map = Resource.GetComponent<GenerateResource>().Map;
+        map = _Resource.GetComponent<GenerateResource>().Map;
 
-        Debug.Log(collider.transform.tag == "Resource");
         if (collider.transform.tag == "Resource")
         {
             GrabTile(rigidbody.velocity.normalized);
@@ -74,9 +61,11 @@ public class GatheringResorces : MonoBehaviour
 
         Vector3 offsetPos = player.transform.position + direction;
         Vector3Int position = tilemap.WorldToCell(offsetPos);
+        if (tilemap.GetTile(position) == null)
+            return;
+        _Inventory.CountResources[map[position.x, position.y]]++;
         tilemap.SetTile(position, null);
         tilemap.RefreshTile(position);
-        Debug.Log(map[position.x, position.y]);
 
     }
 }
