@@ -64,6 +64,5 @@ public class GatheringResorces : MonoBehaviour
             return;
         _Inventory.CountResources[map[position.x, position.y]]++;
         tilemap.SetTile(position, null);
-        tilemap.RefreshTile(position);
     }
 }

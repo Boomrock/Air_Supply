@@ -8,6 +8,7 @@ public class MoveController : MonoBehaviour
     private Rigidbody2D rigidbody;
     public float speed;
     public AudioSource AudioStep;
+    public PlayerController playerController;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +18,16 @@ public class MoveController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (playerController.CurrentState == State.Death)
+        {
+            horisontalInput = 0;
+            verticalInput = 0;
+            rigidbody.velocity = new Vector2(0,0);
+
+
+            return;
+        }
+            
         horisontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
         rigidbody.velocity = new Vector2(horisontalInput * speed , verticalInput * speed);

@@ -12,7 +12,9 @@ public class GenerateResource : MonoBehaviour
     public Vector3 sizeMoonBase;
     public Transform CenterMoonBase;
     public Tile[] Tiles;
+    public Tile[] TilesMoon;
     public Tilemap tilemap;
+    public Tilemap moonGround;
     public int SizeX = 10, SizeY = 10;
     void Start()
     {
@@ -25,7 +27,8 @@ public class GenerateResource : MonoBehaviour
         int r = Random.Range(0, 10000);
         transform.position = new Vector3( - SizeX/2 ,  - SizeY / 2,0);
         tilemap.ClearAllTiles();
-        tilemap.size = new Vector3Int(SizeX, SizeY, 0);
+        moonGround.ClearAllTiles();
+        moonGround.transform.position =  new Vector3(-SizeX / 2, -SizeY / 2, 0); 
         Vector3 top = CenterMoonBase.position + sizeMoonBase/2;
         Vector3 down = CenterMoonBase.position - sizeMoonBase/2;
         for (int y = 0; y < SizeY; y++)
@@ -49,13 +52,14 @@ public class GenerateResource : MonoBehaviour
 
     private void SpawnResource(int y, int x, float value)
     {
-
+        Vector3Int position = new Vector3Int(x, y, 0); 
+        moonGround.SetTile(position, TilesMoon[Random.Range(0, 3)]);
         Map[x, y] = -1;
 
         if (value > 0.9f)
         {
             var element = Random.Range(0, 5);
-            tilemap.SetTile(new Vector3Int(x, y, 0), Tiles[element]);
+            tilemap.SetTile(position, Tiles[element]);
             
             Map[x, y] = element;
 
