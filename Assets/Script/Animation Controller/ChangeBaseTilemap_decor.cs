@@ -37,7 +37,7 @@ public class ChangeBaseTilemap_decor : MonoBehaviour
                 }
                 int N = Tile1.FindIndex(i => Tile.Equals(i));
                 map.SetTile(location, Tile2[N]);
-                for(int i = 0; i < 3; i++)
+                for(int i = 0; i < 4; i++)
                 {
                     inventory.CountResources[i]--;
                 }
