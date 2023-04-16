@@ -205,7 +205,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.652
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -720,7 +720,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 418566353}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.7980886, y: -0.014305262, z: -67.776375}
+  m_LocalPosition: {x: -3.54, y: 0.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -820,6 +820,7 @@ GameObject:
   - component: {fileID: 594942086}
   - component: {fileID: 594942088}
   - component: {fileID: 594942087}
+  - component: {fileID: 594942089}
   m_Layer: 0
   m_Name: Ground
   m_TagString: Untagged
@@ -1720,6 +1721,41 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &594942089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594942085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c368d4ce869ed77488a71d1076b2c87b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tile1:
+  - {fileID: 11400000, guid: e51ba9a6431b9224b987fe5fdf2d812d, type: 2}
+  - {fileID: 11400000, guid: 04f8b2d073ba16445be82aa4cce6989d, type: 2}
+  - {fileID: 11400000, guid: 9857d40f384f3a64494a3233092f819b, type: 2}
+  - {fileID: 11400000, guid: 7880df65b913dfd4980db63923c2cad7, type: 2}
+  - {fileID: 11400000, guid: 0a8f43dc43a53b642bef16a1a1b318ab, type: 2}
+  - {fileID: 11400000, guid: ea78d26b0b8a17f40bd7fcf489bc9496, type: 2}
+  - {fileID: 11400000, guid: bb027c48d4934fe448014617237b528c, type: 2}
+  - {fileID: 11400000, guid: fa190607e2af4d046b46822b88becd44, type: 2}
+  - {fileID: 11400000, guid: ea757a23daafba54ea6ea1967f25881e, type: 2}
+  - {fileID: 11400000, guid: 4beb096bab0115642a8db29badf06510, type: 2}
+  Tile2:
+  - {fileID: 11400000, guid: 4e858d57a98d1fd4093383f2652813ba, type: 2}
+  - {fileID: 11400000, guid: 26b9f1ff97a54b847bf623360a38479a, type: 2}
+  - {fileID: 11400000, guid: 8246881e80ebe144b87960b63eb39bca, type: 2}
+  - {fileID: 11400000, guid: 3f3e942bffe3da94bbdaaf8754bd17b9, type: 2}
+  - {fileID: 11400000, guid: 97da0654e73d453489acf73143912229, type: 2}
+  - {fileID: 11400000, guid: 14fba60cda1b5dc40a291eeb3391233a, type: 2}
+  - {fileID: 11400000, guid: 87b77209ff4e1af4fafd6c5669ec1309, type: 2}
+  - {fileID: 11400000, guid: 077be73ef86d4e445b90e1c8096e5bd0, type: 2}
+  - {fileID: 11400000, guid: 23308c1446caf234c944891593808042, type: 2}
+  - {fileID: 11400000, guid: 544b5489a69053c45a0e2f2740d0ca9a, type: 2}
+  CountResources: 5
 --- !u!1 &682744645
 GameObject:
   m_ObjectHideFlags: 0
@@ -1916,6 +1952,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ef05007ecd6fcd4e8cd39fe62607e62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slider: {fileID: 0}
   MaxOxigen: 10
   CurOxygen: 10
   PlayerInZone: 1
@@ -2054,6 +2091,8 @@ GameObject:
   - component: {fileID: 994094687}
   - component: {fileID: 994094686}
   - component: {fileID: 994094688}
+  - component: {fileID: 994094690}
+  - component: {fileID: 994094689}
   m_Layer: 0
   m_Name: Tilemap_decor
   m_TagString: Untagged
@@ -2770,6 +2809,60 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!114 &994094689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994094684}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c368d4ce869ed77488a71d1076b2c87b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tile1:
+  - {fileID: 11400000, guid: 580863a709add8f4588afce56b7fbae9, type: 2}
+  - {fileID: 11400000, guid: 19ee6bd1a8f2beb47b48c7b2b88b6a44, type: 2}
+  - {fileID: 11400000, guid: 32ca5b14cfdf7274499f2a84a478800c, type: 2}
+  - {fileID: 11400000, guid: 2426b70d4e399b34b8ce6594a80ba608, type: 2}
+  - {fileID: 11400000, guid: 53c58b3d674e4684985e50eba4a57029, type: 2}
+  - {fileID: 11400000, guid: 4beb096bab0115642a8db29badf06510, type: 2}
+  Tile2:
+  - {fileID: 11400000, guid: 1655442486a87544993f1271b271a33a, type: 2}
+  - {fileID: 11400000, guid: e8dfe1735625408468fbb6d7ab2e636b, type: 2}
+  - {fileID: 11400000, guid: bf1019686c3e4304aa0faf2120f464d9, type: 2}
+  - {fileID: 11400000, guid: fdc77e3fe3e448448a56dc7139065cad, type: 2}
+  - {fileID: 11400000, guid: 544b5489a69053c45a0e2f2740d0ca9a, type: 2}
+  - {fileID: 11400000, guid: fa6f9ccd1eea09742ac584bf82420b64, type: 2}
+  CountResources: 5
+--- !u!114 &994094690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994094684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f98b7e5e2e8e26a489b3aed5070762b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tile1:
+  - {fileID: 11400000, guid: 580863a709add8f4588afce56b7fbae9, type: 2}
+  - {fileID: 11400000, guid: 19ee6bd1a8f2beb47b48c7b2b88b6a44, type: 2}
+  - {fileID: 11400000, guid: 32ca5b14cfdf7274499f2a84a478800c, type: 2}
+  - {fileID: 11400000, guid: 2426b70d4e399b34b8ce6594a80ba608, type: 2}
+  - {fileID: 11400000, guid: 53c58b3d674e4684985e50eba4a57029, type: 2}
+  - {fileID: 11400000, guid: 4beb096bab0115642a8db29badf06510, type: 2}
+  Tile2:
+  - {fileID: 11400000, guid: 1655442486a87544993f1271b271a33a, type: 2}
+  - {fileID: 11400000, guid: e8dfe1735625408468fbb6d7ab2e636b, type: 2}
+  - {fileID: 11400000, guid: bf1019686c3e4304aa0faf2120f464d9, type: 2}
+  - {fileID: 11400000, guid: fdc77e3fe3e448448a56dc7139065cad, type: 2}
+  - {fileID: 11400000, guid: 544b5489a69053c45a0e2f2740d0ca9a, type: 2}
+  - {fileID: 11400000, guid: fa6f9ccd1eea09742ac584bf82420b64, type: 2}
+  changeBaseGround: {fileID: 594942089}
 --- !u!1 &1157053585
 GameObject:
   m_ObjectHideFlags: 0
