@@ -11,7 +11,9 @@ public class ChangeBaseTilemap_decor : MonoBehaviour
     public List<Tile> Tile2 = new List<Tile>();
     private Tilemap map;
     private Vector3Int location;
-    public ChangeBaseGround changeBaseGround;
+    public Inventory inventory;
+    public OxygenRegulation regulation;
+    public ChangeBaseGround change;
 
     void Start()
     {
@@ -22,7 +24,7 @@ public class ChangeBaseTilemap_decor : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (changeBaseGround.CountResources != 0)
+            if (inventory.CountResources[0] != 0 && inventory.CountResources[1] != 0 && inventory.CountResources[2] != 0 && inventory.CountResources[3] != 0 && regulation.PlayerInZone)
             {
 
                 Vector3 mp = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -35,7 +37,11 @@ public class ChangeBaseTilemap_decor : MonoBehaviour
                 }
                 int N = Tile1.FindIndex(i => Tile.Equals(i));
                 map.SetTile(location, Tile2[N]);
-                changeBaseGround.CountResources--;
+                for(int i = 0; i < 3; i++)
+                {
+                    inventory.CountResources[i]--;
+                }
+                change.CountToWin++;
             }
         }
     }

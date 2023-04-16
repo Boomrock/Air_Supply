@@ -44,7 +44,7 @@ public class OxygenRegulation : MonoBehaviour
     {
         for (; CurOxygen > 0 && !PlayerInZone; CurOxygen--)
         {
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(3f);
 
         }
         if (CurOxygen <= 0)

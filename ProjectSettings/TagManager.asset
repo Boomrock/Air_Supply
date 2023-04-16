@@ -6,6 +6,7 @@ TagManager:
   tags:
   - OxygenZone
   - Resource
+  - FinishGame
   layers:
   - Default
   - TransparentFX
