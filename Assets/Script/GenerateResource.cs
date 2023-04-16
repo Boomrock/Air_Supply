@@ -38,7 +38,9 @@ public class GenerateResource : MonoBehaviour
 
     private void SpawnResource(int y, int x, float value)
     {
+
         Map[x, y] = -1;
+
         if (value > 0.9f)
         {
             var element = Random.Range(0, 4);
