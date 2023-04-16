@@ -21,10 +21,8 @@ public class GatheringResorces : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Collision Enter");
         if (collision.transform.tag == "Resource")
         {
-            Debug.Log("Enter in if ");
             Vector3Int pos = tilemap.WorldToCell(collision.transform.position);
             tilemap.SetTile(pos, new Tile());
         }
@@ -33,7 +31,6 @@ public class GatheringResorces : MonoBehaviour
     {
         map = Resource.GetComponent<GenerateResource>().Map;
 
-        Debug.Log(collider.transform.tag == "Resource");
         if (collider.transform.tag == "Resource")
         {
 
@@ -46,8 +43,6 @@ public class GatheringResorces : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collider)
     {
         map = Resource.GetComponent<GenerateResource>().Map;
-
-        Debug.Log(collider.transform.tag == "Resource");
         if (collider.transform.tag == "Resource")
         {
             GrabTile(rigidbody.velocity.normalized);
@@ -76,7 +71,5 @@ public class GatheringResorces : MonoBehaviour
         Vector3Int position = tilemap.WorldToCell(offsetPos);
         tilemap.SetTile(position, null);
         tilemap.RefreshTile(position);
-        Debug.Log(map[position.x, position.y]);
-
     }
 }
