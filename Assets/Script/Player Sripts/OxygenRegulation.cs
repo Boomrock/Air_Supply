@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Oxygen : MonoBehaviour
+public class OxygenRegulation : MonoBehaviour
 {
     public int MaxOxigen = 10;
     public int CurOxygen = 10;
@@ -31,7 +31,7 @@ public class Oxygen : MonoBehaviour
 
     IEnumerator CoroutineInZone()
     {
-        for (; CurOxygen < MaxOxigen && PlayerInZone; CurOxygen++) 
+        for (; CurOxygen < MaxOxigen; CurOxygen++) 
         {
             yield return new WaitForSeconds(0.3f);
         }
@@ -40,7 +40,7 @@ public class Oxygen : MonoBehaviour
 
     IEnumerator CoroutineOutZone()
     {
-        for (; CurOxygen > 0 && !PlayerInZone; CurOxygen--)
+        for (; CurOxygen > 0; CurOxygen--)
         {
             yield return new WaitForSeconds(1f);
 
