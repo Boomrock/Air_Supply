@@ -1727,6 +1727,41 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &594942089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594942085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c368d4ce869ed77488a71d1076b2c87b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tile1:
+  - {fileID: 11400000, guid: e51ba9a6431b9224b987fe5fdf2d812d, type: 2}
+  - {fileID: 11400000, guid: 04f8b2d073ba16445be82aa4cce6989d, type: 2}
+  - {fileID: 11400000, guid: 9857d40f384f3a64494a3233092f819b, type: 2}
+  - {fileID: 11400000, guid: 7880df65b913dfd4980db63923c2cad7, type: 2}
+  - {fileID: 11400000, guid: 0a8f43dc43a53b642bef16a1a1b318ab, type: 2}
+  - {fileID: 11400000, guid: ea78d26b0b8a17f40bd7fcf489bc9496, type: 2}
+  - {fileID: 11400000, guid: bb027c48d4934fe448014617237b528c, type: 2}
+  - {fileID: 11400000, guid: fa190607e2af4d046b46822b88becd44, type: 2}
+  - {fileID: 11400000, guid: ea757a23daafba54ea6ea1967f25881e, type: 2}
+  Tile2:
+  - {fileID: 11400000, guid: 4e858d57a98d1fd4093383f2652813ba, type: 2}
+  - {fileID: 11400000, guid: 26b9f1ff97a54b847bf623360a38479a, type: 2}
+  - {fileID: 11400000, guid: 8246881e80ebe144b87960b63eb39bca, type: 2}
+  - {fileID: 11400000, guid: 3f3e942bffe3da94bbdaaf8754bd17b9, type: 2}
+  - {fileID: 11400000, guid: 97da0654e73d453489acf73143912229, type: 2}
+  - {fileID: 11400000, guid: 14fba60cda1b5dc40a291eeb3391233a, type: 2}
+  - {fileID: 11400000, guid: 87b77209ff4e1af4fafd6c5669ec1309, type: 2}
+  - {fileID: 11400000, guid: 077be73ef86d4e445b90e1c8096e5bd0, type: 2}
+  - {fileID: 11400000, guid: 23308c1446caf234c944891593808042, type: 2}
+  inventory: {fileID: 682744655}
+  regulation: {fileID: 682744653}
+  CountToWin: 0
 --- !u!1 &606044383
 GameObject:
   m_ObjectHideFlags: 0
@@ -3172,7 +3207,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -230, y: 43.199997}
+  m_AnchoredPosition: {x: -230, y: 43.19998}
   m_SizeDelta: {x: 390.2987, y: 77.87816}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1234706827
