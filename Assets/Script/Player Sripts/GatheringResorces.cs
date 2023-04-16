@@ -20,7 +20,6 @@ public class GatheringResorces : MonoBehaviour
         rigidbody = player.GetComponent<Rigidbody2D>();
     }
 
-
     private void OnTriggerStay2D( Collider2D collider)
     {
         map = _Resource.GetComponent<GenerateResource>().Map;
@@ -66,6 +65,5 @@ public class GatheringResorces : MonoBehaviour
         _Inventory.CountResources[map[position.x, position.y]]++;
         tilemap.SetTile(position, null);
         tilemap.RefreshTile(position);
-
     }
 }
