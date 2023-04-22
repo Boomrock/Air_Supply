@@ -1854,15 +1854,14 @@ GameObject:
   m_Component:
   - component: {fileID: 682744648}
   - component: {fileID: 682744647}
-  - component: {fileID: 682744646}
   - component: {fileID: 682744649}
   - component: {fileID: 682744653}
   - component: {fileID: 682744650}
-  - component: {fileID: 682744651}
   - component: {fileID: 682744652}
   - component: {fileID: 682744654}
   - component: {fileID: 682744655}
   - component: {fileID: 682744656}
+  - component: {fileID: 682744651}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1870,21 +1869,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &682744646
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 682744645}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45e4d083a0d247046b657a91390693aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3
-  AudioStep: {fileID: 682744656}
-  playerController: {fileID: 682744651}
 --- !u!212 &682744647
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1999,13 +1983,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 682744645}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 984bf2904d7bde64f8046cd742249e81, type: 3}
+  m_Script: {fileID: 11500000, guid: fb2cc8f3df091a24b9db275e14650cb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 682744650}
-  oxygenRegulation: {fileID: 682744653}
-  inventory: {fileID: 682744655}
-  CurrentState: 0
 --- !u!61 &682744652
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3642,7 +3622,6 @@ RectTransform:
   - {fileID: 139356899}
   - {fileID: 1157053586}
   - {fileID: 311933713}
-  - {fileID: 1234706826}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

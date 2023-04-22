@@ -21,14 +21,19 @@ public class GenerateResource : MonoBehaviour
         GenerateResources();
 
     }
+    //Мне не нравится этот метод генерации нужен новый 
     void GenerateResources()
     {
+
         Map = new int[SizeX, SizeY];
         int r = Random.Range(0, 10000);
+        //смещение tilemap 
         transform.position = new Vector3( - SizeX/2 ,  - SizeY / 2,0);
+        moonGround.transform.position = new Vector3(-SizeX / 2, -SizeY / 2, 0);
+
         tilemap.ClearAllTiles();
         moonGround.ClearAllTiles();
-        moonGround.transform.position =  new Vector3(-SizeX / 2, -SizeY / 2, 0); 
+        // CenterMoonBase - центр базы выставляется вручную
         Vector3 top = CenterMoonBase.position + sizeMoonBase/2;
         Vector3 down = CenterMoonBase.position - sizeMoonBase/2;
         for (int y = 0; y < SizeY; y++)
